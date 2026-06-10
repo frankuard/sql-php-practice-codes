@@ -161,3 +161,23 @@ select name, salary, (select avg(salary) from users)
 as average_employee_salary from users;
 */
 
+-- GROUP BY
+
+# select gender, avg(salary) as 'Average Salary' from users group by gender;
+
+-- GROUP BY WITH COUNT
+
+# select gender as 'Gender', avg(salary) as 'Average Salary', count(*) as 'Count' from users group by gender;
+/*
+select gender as 'Gender', 
+avg(salary) as 'Average Salary', 
+count(*) as 'Count' from users group by gender having avg(salary)<64000;
+*/
+-- ROLLUP
+/*
+select gender as 'Gender', 
+avg(salary) as 'Average Salary', 
+count(*) as 'Count' from users group by gender 
+with rollup having avg(salary)<64000;
+*/
+
