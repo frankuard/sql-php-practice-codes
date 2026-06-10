@@ -139,3 +139,6 @@ select * from users where salary> 70000;
 # select * from users where email = "aarav@example.com";
 
 
+# select avg(salary) from users;
+select * from users where salary > (select avg(salary) from users);
+select * from users where salary < (select avg(salary) from users);
