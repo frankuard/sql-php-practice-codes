@@ -131,5 +131,11 @@ select * from users where salary> 70000;
 
 # drop view rich_users;
 
+-- INDEXES
+
+# create index idx_gender on users(gender);
+# drop index idx_gender on users;
+# show indexes from users;
+# select * from users where email = "aarav@example.com";
 
 
