@@ -203,3 +203,25 @@ CALL add_user('Roshan','roshankarki4056@gmail.com','Male','2007-10-25',80000);
 
 # drop procedure select_user;
 # show procedure status where db = 'startersql';
+
+
+-- TRIGGERS
+/*
+delimiter // 
+
+create trigger after_user_insert
+after insert on users
+for each row
+BEGIN
+	insert INTO user_log(user_id,name)
+    values(new.id,new.name);
+END //
+
+delimiter ;
+*/
+
+insert into users(name,email,gender,date_of_birth,salary)
+values('Rakesh','rakesh123@gmail.com','Male','2007-10-25',20000);
+
+select * from user_log;
+
