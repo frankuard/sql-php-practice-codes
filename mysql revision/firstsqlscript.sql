@@ -140,5 +140,20 @@ select * from users where salary> 70000;
 
 
 # select avg(salary) from users;
+-- Scalar
+/*
 select * from users where salary > (select avg(salary) from users);
 select * from users where salary < (select avg(salary) from users);
+*/
+/*
+select id, name, referred_By_id 
+from users 
+where referred_By_id in (select id from users where salary> 50000);
+*/
+/*
+select id, name, referred_By_id 
+from users 
+where referred_By_id in (select id from users where 
+salary> (select avg(salary) from users));
+*/
+
