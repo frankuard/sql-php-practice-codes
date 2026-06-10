@@ -181,3 +181,25 @@ count(*) as 'Count' from users group by gender
 with rollup having avg(salary)<64000;
 */
 
+/*
+DELIMITER //
+CREATE PROCEDURE add_user(
+in p_name varchar(100),
+in p_email varchar(100),
+in p_gender enum('Male','Female','Other'),
+in p_dob DATE,
+IN p_salary int)
+BEGIN
+	insert into users(name,email,gender,date_of_birth,salary)
+    values(p_name,p_email,p_gender,p_dob,p_salary);
+    select * from users;
+END //
+DELIMITER ;
+
+CALL add_user('Roshan','roshankarki4056@gmail.com','Male','2007-10-25',80000);
+*/
+
+# show procedure status where db = 'startersql';
+
+# drop procedure select_user;
+# show procedure status where db = 'startersql';
