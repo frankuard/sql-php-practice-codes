@@ -120,3 +120,11 @@ from users a
 inner join users b on a.referred_by_id = b.id;
 select * from users;
 */
+
+/*
+create view rich_users as
+select * from users where salary> 70000;
+*/
+
+# update users set salary=30000 where id=2;
+select * from rich_users;
