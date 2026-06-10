@@ -112,9 +112,11 @@ INSERT INTO users (name, email, gender, date_of_birth, salary) VALUES
 # update users set referred_By_id = 1 where id IN (2,3,13,14,15,16,18,20);
 # update users set referred_By_id = 2 where id = 4;
 
+/*
 select a.id, 
 a.name as user_name,
 b.name as referred_by_name 
 from users a 
 inner join users b on a.referred_by_id = b.id;
 select * from users;
+*/
