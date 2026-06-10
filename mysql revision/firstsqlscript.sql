@@ -156,4 +156,8 @@ from users
 where referred_By_id in (select id from users where 
 salary> (select avg(salary) from users));
 */
+/*
+select name, salary, (select avg(salary) from users) 
+as average_employee_salary from users;
+*/
 
